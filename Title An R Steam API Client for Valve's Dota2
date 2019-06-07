@@ -1,0 +1,821 @@
+Description
+Event Stats for Accounts.
+Usage
+get_event_stats_for_account(eventid, accountid, dota_id = 570,
+language = "en", key = NULL)
+Arguments
+
+eventid The league id of the compendium.
+accountid The account id.
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple key
+get_game_items 3
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api. Event points and actions seem to be returned from the api but none of them have been
+documented in the api.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetEventStatsForAccount
+Examples
+## Not run:
+get_event_stats_for_account(eventid = 65006, accountid = 89550641)
+## End(Not run)
+get_game_items Dota Items
+Description
+Dota Items.
+Usage
+get_game_items(dota_id = 570, language = "en", key = NULL)
+Arguments
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+4 get_heroes
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a data.frame with all the items. Each row of the data.frame
+is an item and the following columns are included:
+• id: Item’s ID.
+• name: Item’s tokenised name.
+• cost: Item’s in-game cost.
+• secret_shop: Boolean. Whether it is sold in the secret shop.
+• side_shop: Boolean. Whether it is sold in the side shop.
+• recipe: Boolean. Whether it is a recipe.
+• localized_name: Localised name of item.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetGameItems
+Examples
+## Not run:
+get_game_items()
+get_game_items(dota_id = 570, language = 'en', key = NULL)
+get_game_items(dota_id = 570, language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_heroes Dota Heroes
+Description
+A data.frame of Dota2 Heroes.
+Usage
+get_heroes(dota_id = 570, language = "en", key = NULL)
+get_heroes 5
+Arguments
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a data.frame with all the heroes. Each row of the data.frame
+is a hero and the following columns are included:
+• name: Hero’s name.
+• id: Hero’s ID.
+• localized_name: Name of the hero in-game.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetHeroes
+Examples
+## Not run:
+get_heroes()
+get_heroes(language = 'en', key = NULL)
+get_heroes(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+6 get_item_icon_path
+get_item_icon_path Icon Paths for items
+Description
+Icon Paths for items.
+Usage
+get_item_icon_path(iconname, icontype = c("0", "1", "3"), dota_id = 570,
+language = "en", key = NULL)
+Arguments
+iconname The item icon name.
+icontype (optional) The type of image you want.
+• 0 - normal
+• 1 - large
+• 3 - ingame
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+There is no documentation for the result of the request as it is still in the TODO (at the moment of
+writing). Please see the Steam API Documentation below.
+Value
+A dota_api object containing the elements described in the details.
+get_league_listing 7
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetItemIconPath
+get_league_listing Information about DotaTV-supported leagues
+Description
+Information about DotaTV-supported leagues.
+Usage
+get_league_listing(dota_id = 570, language = "en", key = NULL)
+Arguments
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content is probably the most useful part for the user since it is a data.frame containing the
+information about the DotaTV-supported leagues. It consists of the five following columns:
+• name: The league name.
+• leagueid: The ID of the league (unique).
+• description: A description containing information about the league.
+• tournament_url: The website of the link.
+• itemdef: Not documented on the API.
+8 get_live_league_games
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetLeagueListing
+Examples
+## Not run:
+get_league_listing()
+get_league_listing(language = 'en', key = NULL)
+get_league_listing(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_live_league_games Information about Live League Matches
+Description
+In-game League Matches and Information about them.
+Usage
+get_live_league_games(dota_id = 570, language = "en", key = NULL)
+Arguments
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+get_live_league_games 9
+Details
+A list will be returned that contains three elements. The content (a huge list with all the games), the
+url and the response received from the api.
+The content element of the list contains a games list which has information about the live league
+games. Each element of the games list is a game. Each game consists of the following sections (list
+elements):
+• players: A list of lists containing information about the players.
+• radiant_team: A list with information about the radiant team.
+• dire_team: A list with information about the dire team..
+• lobby_id: The lobby id.
+• match_id: The match id.
+• spectators: The number of spectators.
+• series_id: The series id.
+• game_number: The game number.
+• league_id: The league id.
+• stream_delay_s: The stream delay in secs.
+• radiant_series_wins: Radiant series wins.
+• dire_series_wins: Dire series wins.
+• series_type: Series type.
+• league_series_id: The league series id.
+• league_game_id: The league game id.
+• stage_name: The name of the stage.
+• league_tier: League tier.
+• scoreboard: A huge list containing scoreboard information.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetLiveLeagueGames
+Examples
+## Not run:
+get_live_league_games()
+get_live_league_games(language = 'en', key = NULL)
+get_live_league_games(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+10 get_match_details
+get_match_details Information about a specific match
+Description
+Player and Game information about a specific match ID.
+Usage
+get_match_details(match_id, dota_id = 570, language = "en", key = NULL)
+Arguments
+match_id The match ID you want to get information about. Can be either numeric or
+.character
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element is a list that contains information about the players participating in a match and
+also information about the match. The first element of the content list contains information about
+the players. The following details are included:
+• account_id: The player’s account id.
+• player_slot: A player’s slot is returned via an 8-bit unsigned integer. The first bit represent
+the player’s team, false if Radiant and true if dire. The final three bits represent the player’s
+position in that team, from 0-4.
+• hero_id: The hero id.
+• item_0: Top-left inventory item.
+get_match_details 11
+• item_1: Top-center inventory item.
+• item_2: Top-right inventory item.
+• item_3: Bottom-left inventory item.
+• item_4: Bottom-center inventory item.
+• item_5: Bottom-right inventory item.
+• kills: Number of times player killed.
+• deaths: Number of times player died.
+• assists: Number of assists player achieved.
+• leaver_status: Integer from 0-6. Check https://wiki.teamfortress.com/wiki/WebAPI/
+GetMatchDetails.
+• last_hits: Number of last hits.
+• denies: Number of denies.
+• level: Hero level at the end of game.
+• xp_per_min: Xp per minute gained.
+• hero_damage: Total damage dealt to heroes.
+• tower_damage: Total damage dealt to towers.
+• hero_healing: Total health healed on heroes.
+• gold: Total gold left at the end of game.
+• gold_spent: Total gold spent.
+• scaled_hero_damage: Undocumented. Possibly damage after armour.
+• scaled_tower_damage: Undocumented.
+• scaled_hero_healing: Undocumented.
+• ability_upgrades: A list of all abilities in order of upgrade.
+The rest of the elements of the content list contain information about the match. The following
+details are included:
+• radiant_win: Boolean. Whether radiant won or not.
+• duration: The duration of a game in seconds.
+• pre_game_duration: The pre game duration.
+• start_time: Unix Timestamp of when the game began.
+• match_id: The match’s unique id.
+• match_seq_num: A sequence number. It represents the order matches were recorded.
+• tower_status_radiant: Tower Status. Check https://wiki.teamfortress.com/wiki/WebAPI/
+GetMatchDetails.
+• barracks_status_dire: Same as above.
+• cluster: The server cluster (used for downloading replays).
+• first_blood_time: Time in seconds when the first blood occured.
+• lobby_type: Type of lobby.
+12 get_match_history
+• human_players: Number of human players.
+• leagueid: The league id.
+• positive_votes: Number of positive votes.
+• negative_votes: Number of negative votes.
+• game_mode: Game mode.
+• flags: Undocumented.
+• engine: 0 - source1, 1 - source 2.
+• radiant_score: Undocumented.
+• dire_score: Undocumented.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetMatchDetails
+Examples
+## Not run:
+get_match_details(match_id = 2686721815)
+get_match_details(match_id = 2686721815, language = 'en', key = NULL)
+get_match_details(match_id = 2686721815, language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_match_history A list of Matches
+Description
+A list of matches based on various parameters.
+Usage
+get_match_history(hero_id = NULL, game_mode = NULL, skill = NULL,
+date_min = NULL, date_max = NULL, min_players = NULL,
+account_id = NULL, league_id = NULL, start_at_match_id = NULL,
+matches_requested = NULL, tournament_games_only = NULL, tz = "",
+dota_id = 570, language = "en", key = NULL)
+get_match_history 13
+Arguments
+hero_id (optional) The hero id. A list of hero ids can be found via the get_heroes function.
+game_mode (optional) The game mode:
+• 0 - None
+• 1 - All Pick
+• 2 - Captain’s Mode
+• 3 - Random Draft
+• 4 - Single Draft
+• 5 - All Random
+• 6 - Intro
+• 7 - Diretide
+• 8 - Reverse Captain’s Mode
+• 9 - The Greeviling
+• 10 - Tutorial
+• 11 - Mid Only
+• 12 - Least Played
+• 13 - New Player Pool
+• 14 - Compendium Matchmaking
+• 16 - Captain’s Draft
+No 15 does not exist
+skill (optional) Skill bracket.
+• 0 - Any
+• 1 - Normal
+• 2 - High
+• 3 - Very High
+date_min (optional) Minimum date range for returned matches (yyyy-mm-dd HH:MM:SS).
+date_max (optional) Maximum date range for returned matches (yyyy-mm-dd HH:MM:SS).
+min_players (optional) Minimum number of players in match.
+account_id (optional) Account ID.
+league_id (optional) League ID.
+start_at_match_id
+(optional) Matches equal or older than this ID.
+matches_requested
+(optional) Amount of matches to return (defaults to 25).
+tournament_games_only
+(optional) Binary (0 or 1). Whether to return tournament matches.
+tz A time zone specification if date_min and/or date_max are used. See as.POSIXct.
+"" (default) is the current time zone and "GMT" is UTC.
+dota_id Can take one of three values.
+14 get_match_history
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a list called matches. Each element of matches list is a
+match. Each match contains the following sections:
+• match_id: The match id.
+• match_seq_num:A sequence number, representing the order in which matches were recorded.
+• start_time: UNIX timestamp of when the game began.
+• lobby_type: Check the API Documentation.
+• radiant_team_id: Radiant team id.
+• dire_team_id: Dire team id.
+• players: A list containing information about the players.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetMatchHistory
+Examples
+## Not run:
+get_match_history(matches_requested = 2)
+get_match_history(matches_requested = 2, date_min = '2015-01-01 16:00:00', hero_id = 1)
+get_match_history(language = 'en', key = NULL)
+get_match_history(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_match_history_by_sequence_num 15
+get_match_history_by_sequence_num
+A list of Matches
+Description
+A list of matches ordered by a sequence number.
+Usage
+get_match_history_by_sequence_num(start_at_match_seq_num = NULL,
+matches_requested = NULL, dota_id = "570", language = "en",
+key = NULL)
+Arguments
+start_at_match_seq_num
+(Optional) The match sequence number to start returning results from.
+matches_requested
+(Optional) The number of matches to return.
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains information about the matches. Each match follows exactly
+the same structure as the match retrieved from get_match_details. Please check that function’s help
+for detailed information.
+Value
+A dota_api object containing the elements described in the details.
+16 get_rarities
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetMatchHistoryBySequenceNum
+Examples
+## Not run:
+get_match_history_by_sequence_num()
+get_match_history_by_sequence_num(matches_requested = 2, start_at_match_seq_num = 250)
+get_match_history_by_sequence_num(language = 'en', key = NULL)
+get_match_history_by_sequence_num(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_rarities Dota Store Item Rarities
+Description
+A data.frame of Dota2 Store Item Rarities.
+Usage
+get_rarities(dota_id = "570", language = "en", key = NULL)
+Arguments
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+get_scheduled_league_games 17
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a data.frame with all the store item rarities. Each row of the
+data.frame is an store item rarity and the following columns are included:
+• name: Internal rarity name.
+• id: Rarity’s ID.
+• order: Logical order of rarities. From most common to most rare.
+• color: Hexadecimal RGB color of the rarity’s name.
+• localized_name: In-game rarity name.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetRarities
+Examples
+## Not run:
+get_rarities(language = 'en', key = NULL)
+get_rarities(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_scheduled_league_games
+Scheduled League Games
+Description
+A list of scheduled league matches.
+Usage
+get_scheduled_league_games(date_min = NULL, date_max = NULL, tz = "",
+dota_id = "570", language = "en", key = NULL)
+18 get_scheduled_league_games
+Arguments
+date_min (optional) A date of the format "yyyy-mm-dd HH:MM:SS". See examples for
+details. Return games from this date onwards.
+date_max (optional) A date of the format "yyyy-mm-dd HH:MM:SS". See examples for
+details. Return games up to this date
+tz A time zone specification if date_min and/or date_max are used. See as.POSIXct.
+"" (default) is the current time zone and "GMT" is UTC.
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a games list with information about the matches. Each
+element of the games list is a game. Each game consists of (some) of the following sections:
+• league_id: The unique league id.
+• game_id: A unique game id.
+• teams: A list of the participating teams.
+• starttime: Unix Timestamp of start time.
+• comment: Description of game.
+• final: Whether the game is a final or not.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetScheduledLeagueGames
+get_team_info_by_team_id 19
+Examples
+## Not run:
+get_scheduled_league_games()
+get_scheduled_league_games(language = 'en', key = NULL)
+get_scheduled_league_games(language = 'en', key = 'xxxxxxxxxxx')
+get_scheduled_league_games(date_min = '2016-06-01 00:00:00',
+date_max = '2016-09-07 00:00:00')
+## End(Not run)
+get_team_info_by_team_id
+Team Information
+Description
+Team information from team id.
+Usage
+get_team_info_by_team_id(start_at_team_id = NULL, teams_requested = NULL,
+dota_id = 570, language = "en", key = NULL)
+Arguments
+start_at_team_id
+(optional) Team id to start returning results from .
+teams_requested
+(optional) The number of teams to return.
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+20 get_team_info_by_team_id
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains the teams list of which each element is a team. For each
+team different information is provided. Usually the following are included:
+• name: Team’s name.
+• tag: The team’s tag.
+• time_created: Unix timestamp of when the team was created.
+• calibration_games_remaining: : Undocumented (possibly number of games until a ranking
+score can be dedided).
+• logo: The UGC id for the team logo.
+• logo_sponsor: The UGC id for the team sponsor logo.
+• country_code: The team’s ISO 3166-1 country-code.
+• url: Team’s url which they provided.
+• games_played: Number of games played.
+• player_*_account_id: Player’s account id. Will be as many columns as players.
+• admin_account_id: Team’s admin id.
+• league_id_*: Undocumented (Probably leagues they participated in). Will be as many columns
+as leagues.
+• series_type: Series type.
+• league_series_id: The league series id.
+• league_game_id: The league game id.
+• stage_name: The name of the stage.
+• league_tier: League tier.
+• scoreboard: A huge list containing scoreboard information.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetTeamInfoByTeamID
+Examples
+## Not run:
+get_team_info_by_team_id()
+get_team_info_by_team_id(teams_requested = 10)
+get_team_info_by_team_id(language = 'en', key = NULL)
+get_team_info_by_team_id(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_top_live_game 21
+get_top_live_game Top Live Games
+Description
+Returns the top live games by MMR.
+Usage
+get_top_live_game(partner = 1, dota_id = 570, language = "en",
+key = NULL)
+Arguments
+partner The documentation does not specify what this parameter should be but it seems
+like numbers from 1-3 return results of live games.
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a games_list list which contains information about the top
+live games. The following information is provided for each game (Categories are not documented
+at the time of the release - please check the Steam API Documentation link below:
+• activate_time
+• deactivate_time
+• server_steam_id
+• lobby_id
+• league_id
+22 get_tournament_player_stats
+• lobby_type
+• game_time
+• delay
+• spectators
+• game_mode
+• average_mmr
+• sort_score
+• last_update_time
+• radiant_lead
+• radiant_score
+• dire_score
+• players
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetTopLiveGame
+Examples
+## Not run:
+get_top_live_game(partner = 1)
+get_top_live_game(partner = 1, language = 'en', key = NULL)
+get_top_live_game(partner = 2, language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+get_tournament_player_stats
+Tournament Player Stats
+Description
+Tournament Player Stats.
+Usage
+get_tournament_player_stats(account_id, league_id = NULL, hero_id = NULL,
+time_frame = NULL, dota_id = 570, language = "en", key = NULL)
+get_tournament_player_stats 23
+Arguments
+account_id Player’s account id.
+league_id (optional) The league id. Only the International is supported (65006).
+hero_id (optional) A hero id.
+time_frame (optional) Only return stats between this time frame (The parameter format is not
+yet known i.e. it is not in use just yet according to the API’s documentation).
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains information about the matches the player played and information about global stats.
+Value
+A dota_api object containing the elements described in the details.
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetTournamentPlayerStats
+Examples
+## Not run:
+get_tournament_player_stats(account_id = 89550641, league_id = 65006)
+## End(Not run)
+24 get_tournament_prize_pool
+get_tournament_prize_pool
+Dota Tournament Prizes
+Description
+Dota Tournament Prizes.
+Usage
+get_tournament_prize_pool(leagueid = NULL, dota_id = 570, language = "en",
+key = NULL)
+Arguments
+leagueid (optional) The league id to get prize information about.
+dota_id Can take one of three values.
+• 570 - Dota 2 (default)
+• 816 - Dota 2 Internal Test
+• 205790 - Dota 2 Beta Test
+language The ISO639-1 language code for returning all the information in the corresponding language. If the language is not supported, english will be returned.
+For a complete list of the ISO639-1 language codes please visit https://en.
+wikipedia.org/wiki/List_of_ISO_639-1_codes.
+key The api key obtained from Steam. If you don’t have one please visit https://
+steamcommunity.com/dev in order to do so. For instructions on the correct way
+to use this key please visit https://github.com/LyzandeR/RDota2 and check
+the readme file. You can also see the examples. A key can be made available
+to all the functions by using key_actions. The key argument in individual
+functions should only be used in case the user needs to work with multiple keys.
+Details
+A list will be returned that contains three elements. The content, the url and the response received
+from the api.
+The content element of the list contains a data.frame tournament prizes. Each row of the data.frame
+is a tournament and the following columns are included:
+• prize_pool: The prize pool.
+• league_id: The league’s id.
+Value
+A dota_api object containing the elements described in the details.
+key_actions 25
+Steam API Documentation
+https://wiki.teamfortress.com/wiki/WebAPI/GetTournamentPrizePool
+Examples
+## Not run:
+get_tournament_prize_pool(leagueid = 40)
+get_tournament_prize_pool(leagueid = 65006)
+get_tournament_prize_pool(language = 'en', key = NULL)
+get_tournament_prize_pool(language = 'en', key = 'xxxxxxxxxxx')
+## End(Not run)
+key_actions This function makes the key accessible to all functions.
+Description
+key_actions will allow the user to register (set), get (retrieve) or delete the key.
+Usage
+key_actions(action = c("register_key", "get_key", "delete_key"),
+value = NULL)
+Arguments
+action Which action to perform. Check the details.
+value The steam key to use. It is used only in the register_key action. If you do not
+have a key, you can get one at https://steamcommunity.com/dev.
+Details
+There are three actions that can be performed in this function:
+• register_key This action sets the key and at the same time makes it available to all the other
+functions. The key argument in the api calls (i.e. functions) should not be used after setting
+the key with key_actions. It is good practice to store the key in an environment variable in
+.Renviron and then use Sys.getenv() to retrieve it. This technique is described in detail in
+https://github.com/LyzandeR/RDota2 in the readme file.
+• get_key Returns the current key.
+• delete_key Deletes the key.
+Value
+A dota_api object containing the elements described in the details.
+26 print.dota_api
+Examples
+## Not run:
+key_actions(action = 'register_key', value = Sys.getenv('RDota_KEY'))
+key_actions(action = 'register_key', value = 'xxxxxxxxxxxxx')
+key_actions(action = 'get_key')
+key_actions(action = 'delete_key')
+## End(Not run)
+print.dota_api print method for dota_api class
+Description
+print method for dota_api class
+Usage
+## S3 method for class 'dota_api'
+print(x, ...)
+Arguments
+x A dota_api object.
+... further arguments passed to or from other methods. See ?print.
+Details
+A method to print a dota_api object. Only the content will be printed on screen for a dota_api object
+because this is of interest to the user. The dota_api object will usually be a list of three elements
+containing the request url and the response apart from the content.
+Value
+Prints the content element of the dota_api list.
+Index
+as.POSIXct, 13, 18
+get_event_stats_for_account, 2
+get_game_items, 3
+get_heroes, 4
+get_item_icon_path, 6
+get_league_listing, 7
+get_live_league_games, 8
+get_match_details, 10
+get_match_history, 12
+get_match_history_by_sequence_num, 15
+get_rarities, 16
+get_scheduled_league_games, 17
+get_team_info_by_team_id, 19
+get_top_live_game, 21
+get_tournament_player_stats, 22
+get_tournament_prize_pool, 24
+key_actions, 25
+print.dota_api, 26
